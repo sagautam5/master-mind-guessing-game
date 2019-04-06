@@ -2,10 +2,35 @@ var app = angular.module('masterMindApp', []);
 
 app.controller('MasterMindController', masterMind);
 
+/**
+ * Master Mind Controller
+ */
 function masterMind() {
+
+    /**
+     * Home Page flag
+     *
+     * @type {boolean}
+     */
     this.home = true;
+
+    /**
+     * Help Page Flag
+     *
+     * @type {boolean}
+     */
     this.help = false;
+
+    /**
+     * Game Page Flag
+     *
+     * @type {boolean}
+     */
     this.game = false;
+
+    /**
+     * Start game and initiate the values
+     */
     this.startGame = function () {
         this.home = false;
         this.game = true;
@@ -27,6 +52,9 @@ function masterMind() {
 
         this.defaultBalls = [1,2,3,4];
 
+        /**
+         * Generate four digit random number
+         */
         while(this.random.length<4){
             let value = Math.floor(Math.random() * this.Max) + this.Min;
             this.random.push(value);
@@ -37,24 +65,38 @@ function masterMind() {
         }
     };
 
+    /**
+     * End the game an return to main menu
+     */
     this.endGame = function(){
         this.game = false;
         this.help = false;
         this.home = true;
     };
 
+    /**
+     * Go to help page and display rules and game play details
+     */
     this.showHelp = function(){
       this.help = true;
       this.game = false;
       this.home = false;
     };
 
+    /**
+     * Go to home page
+     */
     this.goHome = function(){
         this.home = true;
         this.game = false;
         this.help = false;
     };
 
+    /**
+     * Get individual digits of four digit number
+     * @param number
+     * @returns {*[]}
+     */
     this.getArray = function(number){
 
         let guess = [];
@@ -70,10 +112,19 @@ function masterMind() {
         return guess.reverse();
     };
 
+    /**
+     * Convert array of numbers into string
+     *
+     * @param number
+     * @returns {string}
+     */
     this.getString = function (number) {
         return number.toString().replace(/,/g,'');
     };
 
+    /**
+     * Get user guess from input field and process it to know how close is the guess
+     */
     this.guessNumber = function () {
         let guessedNumber = parseInt(this.number);
         if(this.number == guessedNumber){
@@ -105,6 +156,11 @@ function masterMind() {
         }
     };
 
+    /**
+     * Check if user guess is correct
+     *
+     * @param guessArray
+     */
     this.isCorrectGuess = function(guessArray){
         for(let i=0;i<4;i++){
             if(this.random[i] == guessArray[i]){
@@ -118,7 +174,9 @@ function masterMind() {
                 }
             }
         }
-
+        /**
+         * Correct Guess Case
+         */
         if(this.black==4){
             this.correct = true;
         }
@@ -126,6 +184,12 @@ function masterMind() {
         this.displayBalls(this.black, this.white)
     };
 
+    /**
+     * Display balls based on closeness of result
+     *
+     * @param black
+     * @param white
+     */
     this.displayBalls = function (black, white) {
         for(let i=0; i<black; i++){
             this.darkBalls.push(i+1);
@@ -150,11 +214,17 @@ function masterMind() {
         this.resetBlackWhiteCount();
     };
 
+    /**
+     * Reset balls count
+     */
     this.resetBlackWhiteCount = function () {
         this.black = 0;
         this.white = 0;
     };
 
+    /**
+     * Reset the balls array
+     */
     this.resetBalls = function(){
         this.noBalls = [];
         this.whiteBalls = [];
