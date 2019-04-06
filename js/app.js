@@ -4,8 +4,11 @@ app.controller('MasterMindController', masterMind);
 
 function masterMind() {
     this.home = true;
+    this.help = false;
+    this.game = false;
     this.startGame = function () {
         this.home = false;
+        this.game = true;
         this.Min = 1;
         this.Max = 9;
 
@@ -34,8 +37,22 @@ function masterMind() {
         }
     };
 
-    this.endGame= function(){
+    this.endGame = function(){
+        this.game = false;
+        this.help = false;
         this.home = true;
+    };
+
+    this.showHelp = function(){
+      this.help = true;
+      this.game = false;
+      this.home = false;
+    };
+
+    this.goHome = function(){
+        this.home = true;
+        this.game = false;
+        this.help = false;
     };
 
     this.getArray = function(number){

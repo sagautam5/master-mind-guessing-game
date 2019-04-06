@@ -20,11 +20,15 @@
                 <div class="row">
                     <h3 class="app-title">Master Mind Guess Number</h3>
 
+                    <!-- Main Menu-->
                     <div ng-if="ctrl.home == true">
                         <button ng-click="ctrl.startGame()" class="start-game">Start</button>
+                        <br/>
+                        <button ng-click="ctrl.showHelp()" class="show-help">Help</button>
                     </div>
 
-                    <div class="app-body" ng-if="ctrl.home == false">
+                    <!--Play Game-->
+                    <div class="app-body" ng-if="ctrl.game == true">
                         <div class="user-entry">
                             <input type="text" class="number-input" ng-model="ctrl.number"></input>
                             <br/>
@@ -52,6 +56,20 @@
                             <h3>{{ctrl.correctNumber}}</h3>
                             <button ng-click="ctrl.endGame()" class="quit-game">Quit Game</button>
                         </div>
+                    </div>
+
+                    <div ng-if="ctrl.help == true">
+                        <h5 class="help-title">May I Help You ?</h5>
+                        <ul class="help-list">
+                            <li class="list-item">1. You can make 8 guesses.</li>
+                            <li class="list-item">2. Enter Four Digit Guess in Input Field.</li>
+                            <li class="list-item">3. Click check button to get result of guess.</li>
+                            <li class="list-item">4. Gray Balls count corresponds to correct digits in correct position.</li>
+                            <li class="list-item">5. Black Balls count corresponds to correct digits in incorrect position.</li>
+                            <li class="list-item">6. If your guess is correct all four balls will be Gray.</li>
+                            <li class="list-item">7. If you can not make correct guess untill 8 attempts, correct digits will be displayed.</li>
+                        </ul>
+                        <button ng-click="ctrl.goHome()" class="go-home">Back</button>
                     </div>
                 </div>
             </div>

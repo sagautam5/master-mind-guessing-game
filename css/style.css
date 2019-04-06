@@ -3,20 +3,13 @@ body{
     text-align: center;
     background-color: antiquewhite;
 }
+
 .container{
     width: 650px;
     height: 650px;
     border: 1px solid gray;
     padding: 25px;
     margin-top: 50px;
-}
-.number-input{
-    width: 150px;
-    margin: 10px;
-}
-
-.check-button{
-    margin: 5px;
 }
 
 .app-body{
@@ -25,7 +18,50 @@ body{
 
 .app-title{
     margin-top: 25px;
+    margin-bottom: 15px;
 }
+
+/* Main Menu */
+.start-game{
+    margin-top: 200px;
+    height: 30px;
+    width: 120px;
+}
+
+.show-help{
+    margin-top: 10px;
+    height: 30px;
+    width: 120px;
+}
+
+/* Help Page*/
+
+.message{
+    margin-top: 20px;
+}
+
+.help-list{
+    list-style: none;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.help-list .list-item{
+    margin: 10px;
+}
+
+.help-title{
+    text-align: left;
+    margin-top: 80px;
+    margin-left: 60px;
+}
+
+.go-home{
+    margin-top: 100px;
+}
+
+
+/* Game Page */
 
 .app-body .balls, .remaining-guess{
     text-align: center;
@@ -38,18 +74,18 @@ body{
     margin: 3px;
 }
 
-.start-game{
-    margin-top: 200px;
-    height: 30px;
-    width: 120px;
+.number-input{
+    width: 150px;
+    margin: 10px;
 }
+
+.check-button{
+    margin: 5px;
+}
+
 
 .quit-game{
     margin-top: 240px;
     height: 30px;
     width: 160px;
-}
-
-.message{
-    margin-top: 20px;
 }
