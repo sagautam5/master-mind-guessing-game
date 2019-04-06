@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Master Mind Guess Number</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/style.css" rel="stylesheet" type="text/css" >
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+
+    </head>
+
+    <body ng-app="masterMindApp">
+        <div ng-controller="MasterMindController as ctrl">
+            <div class="container">
+                <div class="row">
+                    <h3 class="app-title">Master Mind Guess Number</h3>
+
+                    <div ng-if="ctrl.home == true">
+                        <button ng-click="ctrl.startGame()" class="start-game">Start</button>
+                    </div>
+
+                    <div class="app-body" ng-if="ctrl.home == false">
+                        <div class="user-entry">
+                            <input type="text" class="number-input" ng-model="ctrl.number"></input>
+                            <br/>
+                            <button ng-click="ctrl.guessNumber()" class="check-button">Check</button>
+                        </div>
+                        <span ng-bind="ctrl.message" class="message"></span>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="balls">Balls</h4>
+                                <div class="result-balls-container">
+                                    <img ng-repeat="i in ctrl.darkBalls" src="images/correctball.png" class="correct-ball">
+                                    <img ng-repeat="i in ctrl.whiteBalls" src="images/misplacedball.png" class="misplaced-ball">
+                                    <img ng-repeat="i in ctrl.noBalls" src="images/defaultball.png" class="default-ball">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="remaining-guess">Remaining Guess: </h4>
+                                <div class="guess-container">
+                                    <h3>{{ctrl.guessRemaining}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>{{ctrl.correctNumber}}</h3>
+                            <button ng-click="ctrl.endGame()" class="quit-game">Quit Game</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

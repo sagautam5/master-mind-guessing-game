@@ -1,0 +1,55 @@
+
+body{
+    text-align: center;
+    background-color: antiquewhite;
+}
+.container{
+    width: 650px;
+    height: 650px;
+    border: 1px solid gray;
+    padding: 25px;
+    margin-top: 50px;
+}
+.number-input{
+    width: 150px;
+    margin: 10px;
+}
+
+.check-button{
+    margin: 5px;
+}
+
+.app-body{
+    margin: 15px;
+}
+
+.app-title{
+    margin-top: 25px;
+}
+
+.app-body .balls, .remaining-guess{
+    text-align: center;
+    margin: 20px;
+}
+
+.app-body .default-ball, .correct-ball, .misplaced-ball{
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+}
+
+.start-game{
+    margin-top: 200px;
+    height: 30px;
+    width: 120px;
+}
+
+.quit-game{
+    margin-top: 240px;
+    height: 30px;
+    width: 160px;
+}
+
+.message{
+    margin-top: 20px;
+}
