@@ -17,5 +17,5 @@ Angular JS, Bootstrap, HTML
 ### Demo
 
 <video width="600" controls>
-  <source src="https://github.com/sagautam5/master-mind-guessing-game/blob/master/videos/howtoplay.webm" type="video/webm">
+  <source src="https://raw.githubusercontent.com/sagautam5/master-mind-guessing-game/refs/heads/master/videos/howtoplay.webm" type="video/webm">
 </video>
