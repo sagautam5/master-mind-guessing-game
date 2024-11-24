@@ -13,3 +13,9 @@ Angular JS, Bootstrap, HTML
 
 - clone or download zip file and extract. Just open the index.html file
 - click help button to know rules
+
+### Demo
+
+<video width="600" controls>
+  <source src="https://github.com/sagautam5/master-mind-guessing-game/raw/main/videos/howtoplay.webm" type="video/webm">
+</video>
